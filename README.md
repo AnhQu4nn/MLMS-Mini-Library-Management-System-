@@ -2,11 +2,11 @@
 
 Hệ thống Quản lý Thư viện Mini được xây dựng với ReactJS, Node.js và MySQL.
 
-## 📋 Báo cáo Hệ thống
+## Báo cáo Hệ thống
 
-### 🏗️ Kiến trúc Hệ thống
+### Kiến trúc Hệ thống
 
-Hệ thống MLMS sử dụng kiến trúc **3-tier (3 lớp)** với các thành phần chính:
+Hệ thống MLMS sử dụng kiến trúc **3 lớp** với các thành phần chính:
 
 #### 1. **Presentation Layer (Lớp Giao diện)**
 - **Frontend**: React.js với TypeScript
@@ -28,7 +28,7 @@ Hệ thống MLMS sử dụng kiến trúc **3-tier (3 lớp)** với các thàn
 - **Models**: Custom ORM-like models
 - **Schema**: Structured SQL database
 
-### 🗂️ Sơ đồ Lớp (Class Diagram)
+### Sơ đồ Lớp (Class Diagram)
 
 #### Backend Models:
 
@@ -89,7 +89,7 @@ Hệ thống MLMS sử dụng kiến trúc **3-tier (3 lớp)** với các thàn
 └─────────────────┘    └─────────────────┘    
 ```
 
-### 🗄️ Sơ đồ Cơ sở Dữ liệu (Database Diagram)
+### Sơ đồ Cơ sở Dữ liệu (Database Diagram)
 
 ```sql
 ┌─────────────────────────────────────┐
@@ -150,14 +150,14 @@ Relationships:
 - borrowings table acts as junction for users-books many-to-many relationship
 ```
 
-### 🔐 Phân quyền Hệ thống
+### Phân quyền Hệ thống
 
 | Vai trò | Quyền hạn |
 |---------|-----------|
 | **Admin** | Toàn quyền: Quản lý users, books, borrowings, xem thống kê |
 | **Member** | Xem sách, mượn sách, xem lịch sử cá nhân |
 
-## 🌟 Tính năng
+##  Tính năng
 
 ### Cho Admin:
 - ✅ Quản lý sách (thêm, sửa, xóa, tìm kiếm)
@@ -172,7 +172,7 @@ Relationships:
 - ✅ Xem lịch sử mượn sách
 - ✅ Quản lý thông tin cá nhân
 
-## 🛠️ Công nghệ sử dụng
+## Công nghệ sử dụng
 
 ### Backend:
 - **Node.js** với Express.js
@@ -188,15 +188,15 @@ Relationships:
 - **Axios** cho API calls
 - **React Hook Form** cho forms
 
-## 📋 Yêu cầu hệ thống
+##  Yêu cầu hệ thống
 
 - **Node.js** >= 16.0.0
 - **MySQL** >= 8.0
 - **npm** hoặc **yarn**
 
-## 🚀 Hướng dẫn Cài đặt và Chạy Chương trình
+##  Hướng dẫn Cài đặt và Chạy Chương trình
 
-### 📋 Yêu cầu Hệ thống
+### Yêu cầu Hệ thống
 
 Trước khi bắt đầu, đảm bảo máy tính của bạn đã cài đặt:
 
@@ -322,7 +322,6 @@ Hệ thống đã có sẵn các tài khoản demo:
 | Tài khoản | Mật khẩu | Vai trò |
 |-----------|----------|---------|
 | admin | password | Quản trị viên |
-| librarian | password | Thủ thư |
 | member1 | password | Thành viên |
 
 ## 📚 API Documentation
@@ -384,33 +383,10 @@ MLMS-Mini-Library-Management-System/
 └── README.md
 ```
 
-## 🔧 Scripts có sẵn
 
-- `npm run dev` - Chạy cả backend và frontend
-- `npm run server` - Chỉ chạy backend
-- `npm run client` - Chỉ chạy frontend
-- `npm run install-deps` - Cài đặt dependencies cho tất cả
+##  Bảo mật Hệ thống
 
-### 🎯 Kiểm tra Cài đặt Thành công
-
-**1. Kiểm tra Backend:**
-```bash
-curl http://localhost:5000/api/health
-# Kết quả mong đợi: {"status": "OK", "message": "Server is running"}
-```
-
-**2. Kiểm tra Frontend:**
-- Mở trình duyệt và truy cập http://localhost:3000
-- Trang đăng nhập sẽ hiển thị
-
-**3. Test đăng nhập:**
-- Username: `admin` | Password: `password`
-- Username: `librarian` | Password: `password` 
-- Username: `member1` | Password: `password`
-
-## 🛡️ Bảo mật Hệ thống
-
-### 🔐 Các Tính năng Bảo mật
+### Các Tính năng Bảo mật
 
 | Tính năng | Mô tả | Công nghệ |
 |-----------|-------|-----------|
@@ -421,7 +397,7 @@ curl http://localhost:5000/api/health
 | **CORS Protection** | Bảo vệ cross-origin | CORS middleware |
 | **SQL Injection** | Ngăn chặn SQL injection | Prepared statements |
 
-### 🔒 Luồng Xác thực (Authentication Flow)
+### Luồng Xác thực (Authentication Flow)
 
 ```
 1. User gửi credentials (username/password)
@@ -433,125 +409,6 @@ curl http://localhost:5000/api/health
 7. Trả về dữ liệu hoặc lỗi unauthorized
 ```
 
-## 🐛 Xử lý Sự cố (Troubleshooting)
-
-### ❌ Lỗi Database Connection
-```bash
-Error: connect ECONNREFUSED 127.0.0.1:3306
-```
-**Giải pháp:**
-1. Kiểm tra MySQL service đang chạy: `sudo systemctl start mysql`
-2. Verify thông tin kết nối trong `backend/.env`
-3. Test connection: `mysql -u root -p -h localhost`
-4. Đảm bảo database `mlms_db` đã được tạo
-
-### ❌ Lỗi Port đã được sử dụng
-```bash
-Error: listen EADDRINUSE :::5000
-```
-**Giải pháp:**
-```bash
-# Tìm process đang sử dụng port
-lsof -ti:5000
-# Kill process
-kill -9 <PID>
-# Hoặc thay đổi port trong .env
-PORT=5001
-```
-
-### ❌ Lỗi Dependencies
-```bash
-npm ERR! peer dep missing
-```
-**Giải pháp:**
-```bash
-# Xóa node_modules và package-lock.json
-rm -rf node_modules package-lock.json
-rm -rf backend/node_modules backend/package-lock.json  
-rm -rf frontend/node_modules frontend/package-lock.json
-
-# Cài lại dependencies
-npm run install-deps
-```
-
-### ❌ Lỗi JWT Token
-```bash
-Error: jwt malformed
-```
-**Giải pháp:**
-1. Xóa localStorage trong browser (F12 > Application > Storage)
-2. Đăng nhập lại
-3. Kiểm tra JWT_SECRET trong `.env`
-
-### ❌ Lỗi CORS
-```bash
-Access to XMLHttpRequest blocked by CORS policy
-```
-**Giải pháp:**
-1. Kiểm tra FRONTEND_URL trong `backend/.env`
-2. Đảm bảo backend đang chạy trước khi start frontend
-
-## 📊 Tóm tắt Báo cáo
-
-### ✅ Điểm Mạnh của Hệ thống
-- **Kiến trúc rõ ràng**: 3-tier architecture dễ maintain và scale
-- **Bảo mật tốt**: JWT authentication + role-based authorization  
-- **UI/UX hiện đại**: Material-UI với responsive design
-- **Code quality**: TypeScript, structured models, clean API
-- **Database design**: Normalized schema với proper relationships
-
-### 🚀 Khả năng Mở rộng
-- **Microservices**: Có thể tách backend thành nhiều services
-- **Caching**: Thêm Redis cho performance
-- **File upload**: Thêm tính năng upload ảnh sách
-- **Notifications**: Email/SMS notifications cho overdue books
-- **Reports**: Advanced reporting với charts
-
-### 📈 Metrics Hệ thống
-- **Backend**: ~15 API endpoints
-- **Frontend**: ~8 main pages/components  
-- **Database**: 3 main tables với proper indexing
-- **Authentication**: JWT-based với 3 user roles
-- **Security**: Multiple layers of protection
-
-## 📞 Liên hệ & Hỗ trợ
-
-### 👨‍💻 Thông tin Nhà phát triển
-- **Project**: MLMS - Mini Library Management System
-- **Version**: 1.0.0
-- **License**: MIT
-- **Technologies**: React.js, Node.js, MySQL, TypeScript
-
-### 🆘 Hỗ trợ
-- **Issues**: Tạo issue trên GitHub repository
-- **Documentation**: Xem README và code comments
-- **Demo**: Sử dụng tài khoản demo để test
-
-### 📝 Changelog
-- **v1.0.0**: Initial release với đầy đủ tính năng CRUD
-- **Features**: User management, Book management, Borrowing system
-- **Security**: JWT authentication, Role-based access control
-
----
-
-**🎉 Cảm ơn bạn đã sử dụng MLMS! Chúc bạn có trải nghiệm tốt với hệ thống quản lý thư viện mini này!**
-
-1. Fork repository
-2. Tạo feature branch (`git checkout -b feature/AmazingFeature`)
-3. Commit changes (`git commit -m 'Add some AmazingFeature'`)
-4. Push to branch (`git push origin feature/AmazingFeature`)
-5. Tạo Pull Request
-
-## 📄 License
-
-Dự án này được phân phối dưới MIT License. Xem file `LICENSE` để biết thêm chi tiết.
-
-## 📞 Liên hệ
-
-Nếu có thắc mắc hoặc cần hỗ trợ, vui lòng tạo issue trên GitHub repository.
-
----
-
-**Phát triển bởi:** [Your Name]  
+**Phát triển bởi:** Anh Quan + AI
 **Version:** 1.0.0  
 **Ngày cập nhật:** $(date +%Y-%m-%d)
