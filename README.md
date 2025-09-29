@@ -276,12 +276,7 @@ JWT_EXPIRES_IN=7d
 FRONTEND_URL=http://localhost:3000
 ```
 
-> **⚠️ Lưu ý Bảo mật:** 
-> - Thay `your_mysql_password_here` bằng mật khẩu MySQL thực tế
-> - Tạo JWT_SECRET mạnh (ít nhất 32 ký tự)
-> - Không commit file `.env` lên Git
-
-### 🚀 Chạy Ứng Dụng
+###  Chạy Ứng Dụng
 
 #### **Phương pháp 1: Chạy Đồng thời (Khuyến nghị)**
 ```bash
@@ -304,7 +299,7 @@ cd frontend
 npm start
 ```
 
-### 🌐 Truy cập Ứng dụng
+###  Truy cập Ứng dụng
 
 Sau khi chạy thành công:
 
@@ -315,7 +310,7 @@ Sau khi chạy thành công:
 | **API Health Check** | http://localhost:5000/api/health | Kiểm tra trạng thái API |
 | **API Documentation** | http://localhost:5000/api/docs | Swagger docs (nếu có) |
 
-## 👤 Tài khoản demo
+##  Tài khoản demo
 
 Hệ thống đã có sẵn các tài khoản demo:
 
@@ -324,7 +319,7 @@ Hệ thống đã có sẵn các tài khoản demo:
 | admin | password | Quản trị viên |
 | member1 | password | Thành viên |
 
-## 📚 API Documentation
+## API Documentation
 
 ### Authentication
 - `POST /api/auth/login` - Đăng nhập
@@ -356,7 +351,7 @@ Hệ thống đã có sẵn các tài khoản demo:
 - `PUT /api/users/:id` - Cập nhật người dùng
 - `DELETE /api/users/:id` - Xóa người dùng (Admin)
 
-## 🗂️ Cấu trúc thư mục
+##  Cấu trúc thư mục
 
 ```
 MLMS-Mini-Library-Management-System/
